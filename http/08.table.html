@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td {
+        /* padding: 20px 40px; */
+        width: 100px;
+        height: 50px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      table tr:nth-child(odd) {
+        background: rgb(235, 130, 130);
+      }
+      table tr:nth-child(even) {
+        background: rgb(122, 212, 241);
+      }
+
+      /* td:hover {
+        background: lightgreen !important;
+      } */
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <script>
+      let td = document.querySelectorAll("td");
+
+      td.forEach((item) => {
+        //1 addEventListener
+        const color=item.style.background;
+        item.addEventListener("mouseenter", () => {
+          item.style.background = "yellow";
+        });
+
+        item.addEventListener("mouseleave", () => {
+          item.style.background = color;
+        });
+        //2 onclick
+        // item.onclick=()=>{
+        //     item.style.background="yellow";
+        // }
+      });
+
+      // 3 事件委托 - 在 table 上只绑定一次
+
+    //   const table = document.querySelector("table");
+    //   table.addEventListener("click", (e) => {
+    //     const td = e.target.closest("td");
+    //     if (td) {
+    //       td.style.background = "yellow";
+    //     }
+    //   });
+
+      //伪类选择器
+    </script>
+  </body>
+</html>
