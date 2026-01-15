@@ -1,0 +1,1 @@
+exports.id="我是index.js文件";

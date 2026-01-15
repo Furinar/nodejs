@@ -1,0 +1,1 @@
+const abc = require("./test.abc");//作为js文件处理
